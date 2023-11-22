@@ -87,11 +87,6 @@ function getNav(): DefaultTheme.NavItem[] {
       activeMatch: '/life/',
     },
     {
-      text: '修仙',
-      link: '/interview/',
-      activeMatch: '/interview/',
-    },
-    {
       text: '扩展',
       link: '/extend/',
       activeMatch: '/extend/',
