@@ -1,0 +1,15 @@
+{
+  "name": "blog",
+  "version": "0.0.1",
+  "author": "au1996",
+  "description": "雪月欧巴的博客",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.29",
+    "markdown-it-mathjax3": "^4.3.2"
+  }
+}
