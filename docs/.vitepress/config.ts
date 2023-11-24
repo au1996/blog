@@ -259,12 +259,12 @@ function getExtend(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         {
-          text: 'git',
-          link: '/extend/git',
-        },
-        {
           text: 'bit',
           link: '/extend/bit',
+        },
+        {
+          text: 'git',
+          link: '/extend/git',
         },
         {
           text: '踩坑记录',
