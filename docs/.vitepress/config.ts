@@ -20,9 +20,9 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/blog/icons/favicon.ico' }],
     ['meta', { name: 'theme-color', content: '#5f67ee' }],
-    ['script', { src: '/blog/js/showGirl/live2d.min.js' }],
-    ['script', { src: '/blog/js/showGirl/live2d.0.min.js' }],
-    ['script', { src: '/blog/js/showGirl/index.js' }],
+    ['script', { src: '/blog/js/live2d/live2d.min.js' }],
+    ['script', { src: '/blog/js/live2d/live2d.0.min.js' }],
+    ['script', { src: '/blog/js/live2d/index.js' }],
   ],
 
   themeConfig: {
