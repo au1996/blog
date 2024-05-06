@@ -21,9 +21,7 @@
 
 :::
 
-## 常用命令
-
-### 创建 git 仓库
+## 创建 git 仓库
 
 ```bash
 # 创建本地库
@@ -33,7 +31,7 @@ git init
 git clone <repo_url>
 ```
 
-### 添加文件
+## 添加文件
 
 ```bash
 # 将修改文件提交至暂存区
@@ -49,7 +47,7 @@ git commit -m "<message>"
 git commit -amend [-m "<message>"]
 ```
 
-### 查看状态
+## 查看状态
 
 ```bash
 # 查看仓库状态
@@ -74,7 +72,7 @@ git log --oneline
 git log --graph
 ```
 
-### 文件删除
+## 文件删除
 
 ```bash
 # 将文件从暂存区和工作区中删除
@@ -84,7 +82,7 @@ git rm <filename>
 git rm --cached <filename>
 ```
 
-### 分支管理
+## 分支管理
 
 ```bash
 # 创建分支
@@ -117,7 +115,7 @@ git merge <branch_name>
 git rebase
 ```
 
-### 标签管理
+## 标签管理
 
 ```bash
 # 指定标签信息
@@ -133,7 +131,7 @@ git push origin <tag_name>
 git push origin --tags
 ```
 
-### 保存与恢复工作
+## 保存与恢复工作
 
 ```bash
 # 保存工作状态
@@ -143,7 +141,7 @@ git stash
 git stash pop
 ```
 
-### 远程库操作
+## 远程库操作
 
 ```bash
 # 关联远程库
@@ -168,7 +166,7 @@ git push [remote] [local_branch]:[remote_branch]
 git pull [remote] [remote_branch]
 ```
 
-### 版本回退
+## 版本回退
 
 ```bash
 # 回到之前版本，该版本之后的改变保存在暂存区(已执行add操作)

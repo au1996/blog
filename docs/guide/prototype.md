@@ -1,4 +1,4 @@
-# 【js 进阶】八分钟搞懂 JavaScript 中的 原型（prototype）、原型链、继承
+# 【js 进阶】十分钟搞懂 JavaScript 中的 原型（prototype）、原型链、继承
 
 ## 前言
 
@@ -7,9 +7,9 @@
 ## 开始（四个概念、一个例外、三个方法）
 
 - 每个`引用类型`都有`对象特征`，都可以`自由扩展`属性
-- 每个`引用类型`都有一个`__proto__`属性，并且指向它的`构造函数`的`prototype`原型对象
-- 每个`构造函数`都有一个`prototype`原型对象
-- 每个`构造函数`的`prototype`原型对象里的`constructor`指向`构造函数`本身
+- 每个`引用类型`都有一个`__proto__`属性，并且指向它的`构造函数`的`prototype`属性
+- 每个`构造函数`都有一个`prototype`属性
+- 每个`构造函数`的`prototype`属性里的`constructor`指向`构造函数`本身
 - 例外：`Object.create(null)` 新建的对象没有`__proto__`属性
 - 使用 `hasOwnProperty()` 来检查对象自身中是否含有该属性
 - 使用 `in` 检查对象中是否含有某个属性时，如果对象中没有但是原型链中有，也会返回 `true`
@@ -18,38 +18,41 @@
 ### 概念一
 
 - 每个`引用类型`都有`对象特征`，都可以`自由扩展`属性
+- [查看代码](https://au1996.github.io/interview/prototype/demo1.html)
 
 ```js
 const obj = {}
 const arr = []
 const fn = function () {}
 
-obj.a = 1
-arr.b = 2
-fn.c = 3
+obj.a = '雪月'
+arr.b = '雪月欧巴'
+fn.c = '雪月欧尼酱'
 
-console.log(obj.a) // 1
-console.log(arr.b) // 2
-console.log(fn.c) // 3
+console.log(obj.a) // 雪月
+console.log(arr.b) // 雪月欧巴
+console.log(fn.c) // 雪月欧尼酱
 ```
 
 ### 概念二
 
 - 每个`引用类型`都有一个`__proto__`属性，并且指向它的`构造函数`的`prototype`原型对象
+- [查看代码](https://au1996.github.io/interview/prototype/demo2.html)
 
 ```js
 const obj = {}
 const arr = []
 const fn = function () {}
 
-obj.__proto__ === Object.prototype // true
-arr.__proto__ === Array.prototype // true
-fn.__proto__ === Function.prototype // true
+console.log(obj.__proto__ === Object.prototype) // true
+console.log(arr.__proto__ === Array.prototype) // true
+console.log(fn.__proto__ === Function.prototype) // true
 ```
 
 ### 概念三
 
 - 每个`构造函数`都有一个`prototype`原型对象
+- [查看代码](https://au1996.github.io/interview/prototype/demo3.html)
 
 ```js
 const { log } = console
@@ -64,6 +67,7 @@ log(Function.prototype)
 ### 概念四
 
 - 每个`构造函数`的`prototype`原型对象里的`constructor`指向`构造函数`本身
+- [查看代码](https://au1996.github.io/interview/prototype/demo4.html)
 
 ```js
 Object.prototype.constructor === Object // true
@@ -87,6 +91,7 @@ Object.create(null) // {}
 - 使用 `hasOwnProperty()` 来检查对象自身中是否含有该属性
 - 使用 `in` 检查对象中是否含有某个属性时，如果对象中没有但是原型链中有，也会返回 `true`
 - 使用 `instanceof` 运算符测试构造函数的 `prototype` 属性是否出现在对象原型链中
+- [查看代码](https://au1996.github.io/interview/prototype/demo5.html)
 
 > 特别注意：for in 循环仅能访问原型链中 enumerable（可枚举）的属性；
 > in 操作符不管是否可枚举
@@ -153,7 +158,7 @@ arr.valueOf() //  [1, 2, 3]
 
 ### 使用 call
 
-> 缺点： 只能继承属性，无法继承父类原型对象中的方法
+> 缺点： 只能继承属性，无法继承父类原型对象中的方法 [查看代码](https://au1996.github.io/interview/prototype/demo6.html)
 
 ```js
 function Parent() {
@@ -174,7 +179,7 @@ c.show() // Uncaught TypeError: c.show is not a function
 
 ### 借助原型链
 
-> 缺点： 多个实例使用同一个原型对象
+> 缺点： 多个实例使用同一个原型对象 [查看代码](https://au1996.github.io/interview/prototype/demo7.html)
 
 ```js
 function Parent2() {
@@ -206,7 +211,7 @@ console.log(c21.play === c22.play) // true
 
 ### 将上面两种结合
 
-> 缺点：前面两个问题解决，但父类构造函数会多执行一次
+> 缺点：前面两个问题解决，但父类构造函数会多执行一次 [查看代码](https://au1996.github.io/interview/prototype/demo8.html)
 
 ```js
 function Parent3() {
@@ -229,7 +234,7 @@ console.log(c32.play) // [1, 2, 3]
 
 ### 组合继承的优化 1
 
-> 缺点：构造函数变成了父类
+> 缺点：构造函数变成了父类 [查看代码](https://au1996.github.io/interview/prototype/demo9.html)
 
 这里让将父类原型对象直接给到子类，父类构造函数只执行一次，而且父类属性和方法均能访问，但是子类实例的构造函数是 Parent4，显然这是不对的，应该是 Child4
 
@@ -250,7 +255,7 @@ console.log(c41)
 
 ### 组合继承的优化 2 (寄生组合继承)
 
-> 缺点：基本完美
+> 缺点：基本完美 [查看代码](https://au1996.github.io/interview/prototype/demo10.html)
 
 ```js
 function Parent5() {
@@ -270,22 +275,24 @@ console.log(c51)
 
 ### 使用 ES6 的 class 的 extends
 
+> 缺点：基本完美 [查看代码](https://au1996.github.io/interview/prototype/demo11.html)
+
 ```js
 class Parent6 {
-	constructor(name, age, school) {
-		this.name = name
-		this.age = age
-		this.school = school || '斗罗大陆'
-	}
-	show() {
-		console.log(this.name + this.age + '岁，' + '在' + this.school)
-	}
+  constructor(name, age, school) {
+    this.name = name
+    this.age = age
+    this.school = school || '斗罗大陆'
+  }
+  show() {
+    console.log(this.name + this.age + '岁，' + '在' + this.school)
+  }
 }
 
 class Child6 extends Parent6 {
-	constructor(name, age, school) {
-		super(name, age, school)
-	}
+  constructor(name, age, school) {
+    super(name, age, school)
+  }
 }
 
 const c61 = new Parent6('小明', 18, '五道口职业技术学院')

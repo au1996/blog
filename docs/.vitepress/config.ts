@@ -39,6 +39,7 @@ export default defineConfig({
       '/frontend/javaScript/': getFrontendJavaScript(),
       '/frontend/vue/': getFrontendVue(),
       '/frontend/node/': getFrontendNode(),
+      '/interview/': getInterview(),
       '/extend/': getExtend(),
     },
   },
@@ -87,6 +88,11 @@ function getNav(): DefaultTheme.NavItem[] {
       activeMatch: '/life/',
     },
     {
+      text: '修仙',
+      link: '/interview/',
+      activeMatch: '^/interview/',
+    },
+    {
       text: '扩展',
       link: '/extend/',
       activeMatch: '/extend/',
@@ -101,17 +107,29 @@ function getGuide(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         {
-          text: 'vue3后台管理系统',
-          link: '/guide/vite-vue3',
+          text: '浏览器的进程模型-消息队列',
+          link: '/guide/borwer-message',
         },
         {
-          text: 'ES6系列-简化代码',
-          link: '/guide/es6-simplify-code',
+          text: '浏览器的页面渲染顺序',
+          link: '/guide/borwer-render',
+        },
+        {
+          text: '你不知道的Css之包含块',
+          link: '/guide/css-block',
         },
         {
           text: 'Event-Loop-事件循环',
           link: '/guide/event-loop',
         },
+        {
+          text: 'ES6系列-简化代码',
+          link: '/guide/es6-simplify-code',
+        },
+        // {
+        //   text: 'ES6系列-ES2017-ES2021',
+        //   link: '/guide/es2017-2021',
+        // },
         {
           text: 'this指向',
           link: '/guide/this',
@@ -125,9 +143,17 @@ function getGuide(): DefaultTheme.SidebarItem[] {
           link: '/guide/chrome-extensions',
         },
         {
-          text: '前端规范',
-          link: '/guide/standard',
+          text: 'vue3后台管理系统',
+          link: '/guide/vite-vue3',
         },
+        // {
+        //   text: '作用域与闭包',
+        //   link: '/guide/scope',
+        // },
+        // {
+        //   text: '前端规范',
+        //   link: '/guide/standard',
+        // },
       ],
     },
   ]
@@ -148,8 +174,16 @@ function getLife(): DefaultTheme.SidebarItem[] {
           link: '/life/xueyue-age20',
         },
         {
+          text: '2020年终总结',
+          link: '/life/xueyue-year2020',
+        },
+        {
           text: '2023年终总结',
           link: '/life/xueyue-year2023',
+        },
+        {
+          text: '纪念吾之好友',
+          link: '/life/friend-lcp',
         },
       ],
     },
@@ -196,7 +230,7 @@ function getFrontendJavaScript(): DefaultTheme.SidebarItem[] {
           link: '/frontend/javaScript/es6',
         },
         {
-          text: '手写系列',
+          text: '小技巧',
           link: '/frontend/javaScript/handwriting',
         },
       ],
@@ -236,17 +270,35 @@ function getFrontendNode(): DefaultTheme.SidebarItem[] {
           link: '/frontend/node/koa',
         },
         {
-          text: 'egg',
-          link: '/frontend/node/egg',
-        },
-        {
           text: 'webpack4',
           link: '/frontend/node/webpack4',
         },
         {
-          text: 'webpack5',
-          link: '/frontend/node/webpack5',
+          text: 'vite',
+          link: '/frontend/node/vite',
         },
+      ],
+    },
+  ]
+}
+
+function getInterview() {
+  return [
+    {
+      text: '前端修仙之路',
+      items: [
+        {
+          text: '知识汇总',
+          link: '/interview/overview',
+        },
+        {
+          text: '面试真题',
+          link: '/interview/real-question',
+        },
+        // {
+        //   text: '每周一题',
+        //   link: '/interview/one',
+        // },
       ],
     },
   ]
@@ -267,12 +319,16 @@ function getExtend(): DefaultTheme.SidebarItem[] {
           link: '/extend/git',
         },
         {
-          text: '踩坑记录',
-          link: '/extend/bug',
+          text: 'npm',
+          link: '/extend/npm',
         },
         {
-          text: 'markdowm语法',
-          link: '/extend/markdowm',
+          text: '热知识',
+          link: '/extend/tips',
+        },
+        {
+          text: '踩坑记录',
+          link: '/extend/bug',
         },
       ],
     },

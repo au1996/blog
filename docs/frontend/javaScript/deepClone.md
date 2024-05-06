@@ -16,6 +16,8 @@
 
 ## 乞丐版
 
+- [查看代码](https://au1996.github.io/interview/deep-clone/demo1.html)
+
 ```js
 function deepClone(target) {
   if (typeof target === 'object' && target !== null) {
@@ -28,13 +30,17 @@ function deepClone(target) {
 
 会出现以下问题：
 
-- 执行会报错：存在 BigInt 类型、循环引用的情况下。
-- 类型被转换：拷贝 Date 引用类型会变成字符串。
-- 键值会消失：对象的值中为 Function、Undefined、Symbol 这几种类型，。
-- 键值变成空对象：对象的值中为 Map、Set、RegExp 这几种类型。
-- 无法拷贝：不可枚举属性、对象的原型链。
+- 类型被转换：`Date` 引用类型会变成字符串
+- 键值会消失：当值为 `Function`、`Undefined`、`Symbol` 这几种类型
+- 键值变成空对象：当值为 `Map`、`Set`、`RegExp` 这几种类型
+- 无法拷贝：`不可枚举`属性、对象的`原型链`属性
+- 如果存在`循环引用`：执行会报错
+- 如果存在 `BigInt` 类型：执行会报错
+- 补充：详细内容请查看官方文档：[JSON.stringify()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
 
 ## 简化版
+
+- [查看代码](https://au1996.github.io/interview/deep-clone/demo2.html)
 
 ```js
 function deepClone(target) {
@@ -53,13 +59,16 @@ function deepClone(target) {
 
 会出现以下问题：
 
-- 不能处理循环引用
-- 只考虑了 Object 和 Array 对象，Date 对象、RegExp 对象、Map 对象、Set 对象都变成了 Object 对象，且值也不正确。
-- 丢失了属性名为 Symbol 类型的属性
-- 丢失了不可枚举的属性
-- 原型上的属性也被添加到拷贝的对象中
+- 只考虑了 `Object` 和 `Array`
+- `Date` `、RegExp` `、Map` 、`Set` 都变成了 `Object`，且值也不正确。
+- 丢失了属性名为 `Symbol` 类型的属性
+- 丢失了`不可枚举`的属性
+- `原型`上的属性被添加到拷贝的对象中
+- 不能处理`循环引用`
 
 ## 完美版
+
+- [查看代码](https://au1996.github.io/interview/deep-clone/demo3.html)
 
 ```js
 function deepClone(target) {
