@@ -4,5 +4,3 @@
 努力不一定成功  
 但放弃一定很爽
 :::
-
-<Iframe path="https://www.xyob.cn/clock" />
