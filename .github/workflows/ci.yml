@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Node.js v18.18.0
+      - name: Setup Node.js v20.8.0
         uses: actions/setup-node@v1
         with:
-          node-version: '18.18.0'
+          node-version: '20.8.0'
 
       - name: Install
         run: npm install
