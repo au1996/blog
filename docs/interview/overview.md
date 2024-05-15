@@ -86,6 +86,7 @@
 - [babel 原理](https://bobi.ink/2019/10/01/babel/)<input type="checkbox" disabled checked />
 - [webpack 工作流程](https://developer.aliyun.com/article/61047)<input type="checkbox" disabled checked />
 - [webpack loader 机制](https://github.com/youngwind/blog/issues/101)<input type="checkbox" disabled checked />
+- [webpack 原理](https://xie.infoq.cn/article/5f463d1f0ec3598973714f44a)<input type="checkbox" disabled checked />
 
 ## 计算机基础
 
