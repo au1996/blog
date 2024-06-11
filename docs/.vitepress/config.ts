@@ -330,6 +330,10 @@ function getExtend(): DefaultTheme.SidebarItem[] {
           text: '踩坑记录',
           link: '/extend/bug',
         },
+        {
+          text: 'nginx安装配置',
+          link: '/extend/nginx-install',
+        },
       ],
     },
   ]
