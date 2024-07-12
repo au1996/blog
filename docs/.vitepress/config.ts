@@ -21,11 +21,11 @@ export default defineConfig({
   },
 
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/blog/icons/favicon.ico' }],
     ['meta', { name: 'theme-color', content: '#5f67ee' }],
-    ['script', { src: '/blog/js/live2d/live2d.min.js' }],
-    ['script', { src: '/blog/js/live2d/live2d.0.min.js' }],
-    ['script', { src: '/blog/js/live2d/index.js' }],
+    ['link', { rel: 'icon', type: 'image/png', href: `${process.env.BASE_URL}icons/favicon.ico` }],
+    ['script', { src: `${process.env.BASE_URL}js/live2d/live2d.min.js` }],
+    ['script', { src: `${process.env.BASE_URL}js/live2d/live2d.0.min.js` }],
+    ['script', { src: `${process.env.BASE_URL}js/live2d/index.js` }],
   ],
 
   themeConfig: {
