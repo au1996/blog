@@ -8,6 +8,9 @@ export default defineConfig({
   cleanUrls: true,
   markdown: {
     math: true,
+    languageAlias: {
+      注释: 'html',
+    },
   },
 
   sitemap: {
