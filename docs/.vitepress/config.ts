@@ -3,7 +3,7 @@ import { defineConfig, type DefaultTheme } from 'vitepress'
 export default defineConfig({
   title: '雪月欧巴',
   description: '雪月的博客',
-  base: '/blog/',
+  base: process.env.BASE_URL,
   lastUpdated: true,
   cleanUrls: true,
   markdown: {

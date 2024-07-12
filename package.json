@@ -6,9 +6,12 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev docs",
-    "build": "vitepress build docs"
+    "build": "cross-env BASE_URL=/blog/ vitepress build docs",
+    "build-base": "cross-env BASE_URL=/ vitepress build docs"
   },
   "devDependencies": {
+    "@types/node": "^20.14.10",
+    "cross-env": "^7.0.3",
     "markdown-it-mathjax3": "^4.3.2",
     "vitepress": "^1.0.0-rc.29"
   },
