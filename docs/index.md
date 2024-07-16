@@ -1,8 +1,8 @@
 ---
 layout: home
 
-title: VitePress
-titleTemplate: Vite & Vue Powered Static Site Generator
+title: 雪月欧巴
+titleTemplate: 博客 & 雪月欧尼酱
 
 hero:
   name: 雪月欧巴
