@@ -27,3 +27,21 @@ jobs:
           publish_dir: ./docs/.vitepress/dist
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit_message: deploy
+
+      - name: Deploy to server by ssh
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          echo "${SSH_PRIVATE_KEY}" > private_key
+          chmod 600 private_key
+          scp -i private_key -r ./docs/.vitepress/dist/* ${SERVER_USER}@${SERVER_HOST}:/usr/src/web/blog/docs/.vitepress/dist
+
+      # - name: Deploy to server by password
+      #   env:
+      #     SERVER_HOST: ${{ secrets.SERVER_HOST }}
+      #     SERVER_USER: ${{ secrets.SERVER_USER }}
+      #     SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+      #   run: |
+      #     sshpass -p "${SERVER_PASSWORD}" scp -o StrictHostKeyChecking=no -r ./docs/.vitepress/dist/* ${SERVER_USER}@${SERVER_HOST}:/usr/src/web/blog/docs/.vitepress/dist
