@@ -34,6 +34,4 @@ jobs:
           SERVER_USER: ${{ secrets.SERVER_USER }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
-          echo "${SSH_PRIVATE_KEY}" > private_key
-          chmod 600 private_key
-          scp -i private_key -r ./docs/.vitepress/dist/* ${SERVER_USER}@${SERVER_HOST}:/usr/src/web/blog/docs/.vitepress/dist
+          scp -i ${SSH_PRIVATE_KEY} -r ./docs/.vitepress/dist/* ${SERVER_USER}@${SERVER_HOST}:/usr/src/web/blog/docs/.vitepress/dist
