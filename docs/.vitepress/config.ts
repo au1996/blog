@@ -149,14 +149,10 @@ function getGuide(): DefaultTheme.SidebarItem[] {
           text: 'vue3后台管理系统',
           link: '/guide/vite-vue3',
         },
-        // {
-        //   text: '作用域与闭包',
-        //   link: '/guide/scope',
-        // },
-        // {
-        //   text: '前端规范',
-        //   link: '/guide/standard',
-        // },
+        {
+          text: '前端规范',
+          link: '/guide/standard',
+        },
       ],
     },
   ]
@@ -336,6 +332,10 @@ function getExtend(): DefaultTheme.SidebarItem[] {
         {
           text: 'nginx安装配置',
           link: '/extend/nginx-install',
+        },
+        {
+          text: 'node安装配置',
+          link: '/extend/node-install',
         },
       ],
     },
