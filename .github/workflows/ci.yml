@@ -28,10 +28,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit_message: deploy
 
-      - name: Deploy to server by ssh
+      - name: Deploy to server by password
         env:
           SERVER_HOST: ${{ secrets.SERVER_HOST }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         run: |
-          scp -i ${SSH_PRIVATE_KEY} -r ./docs/.vitepress/dist/* ${SERVER_USER}@${SERVER_HOST}:/usr/src/web/blog/docs/.vitepress/dist
+          sshpass -p "${SERVER_PASSWORD}" scp -o StrictHostKeyChecking=no -r ./docs/.vitepress/dist/* ${SERVER_USER}@${SERVER_HOST}:/usr/src/web/blog/docs/.vitepress/dist
