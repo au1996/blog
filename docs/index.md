@@ -2,7 +2,7 @@
 layout: home
 
 title: 雪月欧巴
-titleTemplate: 博客 & 雪月欧尼酱
+titleTemplate: 博客
 
 hero:
   name: 雪月欧巴
