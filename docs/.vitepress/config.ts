@@ -310,32 +310,36 @@ function getExtend(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         {
-          text: 'bit',
+          text: 'bit (比特)',
           link: '/extend/bit',
-        },
-        {
-          text: 'git',
-          link: '/extend/git',
-        },
-        {
-          text: 'npm',
-          link: '/extend/npm',
-        },
-        {
-          text: '热知识',
-          link: '/extend/tips',
         },
         {
           text: '踩坑记录',
           link: '/extend/bug',
         },
         {
-          text: 'nginx安装配置',
-          link: '/extend/nginx-install',
+          text: '小技巧',
+          link: '/extend/tips',
+        },
+        {
+          text: 'npm安装配置',
+          link: '/extend/npm',
         },
         {
           text: 'node安装配置',
           link: '/extend/node-install',
+        },
+        {
+          text: 'nginx安装配置',
+          link: '/extend/nginx-install',
+        },
+        {
+          text: 'git安装配置',
+          link: '/extend/git-install',
+        },
+        {
+          text: 'git速查表',
+          link: '/extend/git',
         },
       ],
     },

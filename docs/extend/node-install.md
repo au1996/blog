@@ -1,4 +1,4 @@
-# Node 安装与升级
+# Node 安装与配置
 
 ## Linux 环境安装 Node
 

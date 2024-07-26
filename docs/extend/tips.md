@@ -5,10 +5,13 @@
 ```js
 document.addEventListener('visibilitychange', function () {
   // document.visibilityState
-  // visible 显示 页面内容可以至少部分可见。这意味着该页面是非最小化窗口的前台选项卡
+  // visible 显示 页面内容至少部分可见。
+  // 意味着该页面是非最小化窗口的前台选项卡
 
-  // hidden 隐藏 页面内容对用户不可见。这意味着文档要么是后台选项卡，要么是最小化窗口的一部分
-  // 或者操作系统屏幕锁定处于活动状态。。
+  // hidden 隐藏 页面内容对用户不可见。
+  // 意味着文档是后台选项卡
+  // 或者最小化窗口的一部分
+  // 或者操作系统屏幕锁定处于活动状态
 
   // prerender 预渲染 注意：这已从标准中删除
   // 页面内容正在预渲染，并且对用户不可见（出于 document.hidden 的目的被视为隐藏）
