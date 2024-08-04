@@ -1,0 +1,6 @@
+import{aw as a,q as s,p as e,aR as n}from"./chunks/framework.CNwJN8zI.js";const m=JSON.parse('{"title":"汇总一些计算机相关知识","description":"","frontmatter":{},"headers":[],"relativePath":"extend/index.md","filePath":"extend/index.md","lastUpdated":1722761252000}'),p={name:"extend/index.md"},t=n(`<h1 id="汇总一些计算机相关知识" tabindex="-1">汇总一些计算机相关知识 <a class="header-anchor" href="#汇总一些计算机相关知识" aria-label="Permalink to &quot;汇总一些计算机相关知识&quot;">​</a></h1><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>吾生也有涯</span></span>
+<span class="line"><span>而知也无涯</span></span>
+<span class="line"><span>以有涯随无涯</span></span>
+<span class="line"><span>殆已!</span></span>
+<span class="line"><span>已而为知者</span></span>
+<span class="line"><span>殆而已矣!</span></span></code></pre></div><blockquote><p>人的生命有限，而知识无穷。</p><p>用有限的生命去追求无穷的知识，很危险。</p><p>如果只是一味追求知识，那就太危险了！</p></blockquote><p>总结：</p><blockquote><p>做什么事都不要绝对化，适可而止。</p><p>永远有你达不到的东西，不必苛求。</p></blockquote>`,5),o=[t];function i(c,l,d,r,_,h){return e(),s("div",null,o)}const x=a(p,[["render",i]]);export{m as __pageData,x as default};
